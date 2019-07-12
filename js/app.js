@@ -70,7 +70,10 @@
       });
       tygronWSMLayers.push(dynamicMapServiceLayer);
 
-      var featureLayer = new FeatureLayer("https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Landscape_Trees/FeatureServer/0");
+      var featureLayer = new FeatureLayer("https://services.arcgis.com/nSZVuSZjHpEZZbRo/ArcGIS/rest/services/Bestuurlijke_Grenzen_2017_Gemeenten/FeatureServer/0", {
+        id: "Gemeente-feature-layer-Esri",
+        visible: false
+      });
       tygronWSMLayers.push(featureLayer);
       }
 
