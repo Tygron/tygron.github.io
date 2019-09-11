@@ -84,7 +84,7 @@
 
       on(dom.byId("api-submit"),"click", function(evt){
         var tygronToken = dom.byId("api-input").value;
-        var wmsUrl = "https://test.tygron.com/web/wms?&token=" + tygronToken;
+        var wmsUrl = "https://engine.tygron.com/web/wms?&token=" + tygronToken;
 
         if(tygronWSMLayers && tygronWSMLayers.length > 0) {
           if(dom.byId("api-input").value == "koe") {
@@ -93,7 +93,7 @@
             dom.byId("api-submit-error").innerHTML = "I couldn't quickly figure out how to reinitialize the layer list when readding layers to the map .... So please refresh and submit your token."
           }
         } else {
-          axios.get("https://test.tygron.com/web/overlays.geojson?token=" + tygronToken)
+          axios.get("https://engine.tygron.com/web/overlays.geojson?token=" + tygronToken)
           .then(function(response){
             setTygronWsmLayerInfo(response.data);
             AssembleWsmLayers(wmsUrl);
